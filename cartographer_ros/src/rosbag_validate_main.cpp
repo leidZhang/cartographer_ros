@@ -41,7 +41,7 @@
 #else
 #include "urdf/model.hpp"
 #endif
-#include <tf2/utils.hpp>
+#include <tf2/utils.h>
 
 DEFINE_string(bag_filename, "", "Bag to process.");
 DEFINE_bool(dump_timing, false,

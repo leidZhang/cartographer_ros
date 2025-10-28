@@ -19,6 +19,7 @@ project(cartographer_rviz)
 set(CMAKE_POSITION_INDEPENDENT_CODE TRUE)
 
 find_package(ament_cmake REQUIRED)
+find_package(Boost REQUIRED COMPONENTS iostreams)
 
 # Default to C++17
 set(CMAKE_CXX_STANDARD 17)
