@@ -54,8 +54,11 @@ colcon build --symlink-install
 ### 1. Missing `.cmake` files for glog 
 If `FindGlog.cmake` or other CMake files are missing, build glog v0.6.0 from source:
 ```
-git clone -b v0.6.0 https://github.com/google/glog.git
-cd glog && mkdir build && cd build
+wget https://github.com/google/glog/archive/refs/tags/v0.6.0.tar.gz
+tar -xvzf v0.6.0.tar.gz
+cd glog-0.6.0
+
+mkdir build && cd build
 cmake ..
 make -j$(nproc)
 sudo make install
