@@ -2,7 +2,7 @@
 set -e
 
 # Remove old versions
-apt remove -y libgoogle-glog-dev libgoogle-glog0v5
+apt remove -y libgoogle-glog-dev libgoogle-glog0v5 || true
 
 # Download and extract
 wget https://github.com/google/glog/archive/refs/tags/v0.6.0.tar.gz
