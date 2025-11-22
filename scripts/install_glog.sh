@@ -33,7 +33,12 @@ cd glog-$REQUIRED_VERSION
 
 echo "==== Building glog from source ===="
 mkdir -p build && cd build
-cmake .. -DBUILD_SHARED_LIBS=ON
+cmake .. \
+    -DBUILD_SHARED_LIBS=ON \
+    -DBUILD_TESTING=OFF \
+    -DWITH_GFLAGS=ON \
+    -DCMAKE_INSTALL_LIBDIR=lib \
+    -DWITH_CMAKE_PACKAGE=ON
 make -j"$(nproc)"
 sudo make install
 
