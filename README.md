@@ -63,6 +63,7 @@ cmake ..
 make -j$(nproc)
 sudo make install
 ```
+Or run the `scripts/prepare_glog_cmake.sh` if you already have glog installed.
 ### 2. Ceres Solver incompatible with glog
 Build Ceres Solver 1.14.x from source for compatibility:
 ```
