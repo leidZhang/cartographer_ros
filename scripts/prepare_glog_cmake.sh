@@ -1,5 +1,17 @@
 #!/bin/bash
 
+# Detect architecture
+ARCH=$(uname -m)
+
+if [[ "$ARCH" == "x86_64" ]]; then
+  LIB_PATH="/usr/lib/x86_64-linux-gnu/libglog.so"
+elif [[ "$ARCH" == "aarch64" || "$ARCH" == "arm64" ]]; then
+  LIB_PATH="/usr/lib/aarch64-linux-gnu/libglog.so"
+else
+  echo "Unsupported architecture: $ARCH"
+  exit 1
+fi
+
 # Target dir
 CONFIG_DIR="/usr/local/lib/cmake/glog"
 CONFIG_FILE="${CONFIG_DIR}/glogConfig.cmake"
